@@ -1,4 +1,5 @@
 <?php
+  $numOfCaptchas = 6;
   header('Access-Control-Allow-Origin: *');
   header('Access-Control-Allow-Credentials: true');
   header('Access-Control-Max-Age: 86400');
@@ -6,7 +7,7 @@
   if($_GET['action'] == 'create') {
     session_start();
     $_SESSION['passed'] = false;
-    $id = rand(1, 5);
+    $id = rand(1, $numOfCaptchas);
     $_SESSION['captcha_id'] = $id;
     $_SESSION['attempts_left'] = 3;
     $captcha_data = json_decode(file_get_contents("captchas/data/$id.json"), true);
@@ -44,12 +45,3 @@
   }
 
   echo json_encode($output);
-/*
-response codes:
-  0: session created successfuly
-  1: captcha answer correct
-  2: captcha answer incorrect
-  3: captcha answers limit exceed
-  4: captcha confirmed
-  5: captcha rejected
-*/

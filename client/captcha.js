@@ -1,5 +1,5 @@
-var captchaProviderUrl = "https://koperek.top/captcha/get_captcha.php"
-var targetUrl = "https://koperek.top/captcha/confirm.php";
+var targetUrl = "https://koperek.top/captcha/server/confirm.php";
+var captchaProviderUrl = "https://koperek.top/captcha/server/get_captcha.php"
 
 var selected = Array(16).fill(false)
 var session
