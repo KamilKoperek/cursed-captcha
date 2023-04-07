@@ -1,26 +1,30 @@
-var captchaProviderUrl = "http://localhost/projects/captcha/get_captcha.php"
-var targetUrl = "login.php";
+var captchaProviderUrl = "https://koperek.top/captcha/get_captcha.php"
+var targetUrl = "https://koperek.top/captcha/confirm.php";
 
 var selected = Array(16).fill(false)
+var session
+
 function submitCaptcha() {
   var xhttp = new XMLHttpRequest();
   xhttp.onreadystatechange = function() {
     if (this.readyState == 4 && this.status == 200) {
       var response = JSON.parse(xhttp.responseText)
+      console.log(response)
       if(response["code"] == "1") {
         document.getElementById("captcha-result").innerHTML = "";
-        window.location.href = targetUrl + "?captcha_session="+response["session_id"];
+        window.location.href = targetUrl + "?captcha_session="+session;
       } else if(response["code"] == "2")
         document.getElementById("captcha-result").innerHTML = "Try again";
       else if(response["code"] == "3")
         openCaptcha()
     }
   };
-  xhttp.open("GET", captchaProviderUrl + "?action=validate&answer="+JSON.stringify(selected), true);
+  xhttp.open("GET", captchaProviderUrl + "?action=validate&answer="+JSON.stringify(selected)+"&captcha_session="+session, true);
   xhttp.send();
 }
 
 function generate() {
+  selected.fill(false)
   var panels = document.getElementById("captcha-panels")
   panels.innerHTML = ""
   for(var i = 0; i < 16; i++) {
@@ -43,6 +47,7 @@ function openCaptcha() {
   xhttp.onreadystatechange = function() {
     if (this.readyState == 4 && this.status == 200) {
        var captcha = JSON.parse(xhttp.responseText)
+       session = captcha["captcha_session"]
        document.getElementById("captcha-img").src = "data:image/png;base64, " + captcha["image"]
        document.getElementById("captcha-question").innerHTML = "Select squares with&nbsp;<b>" + captcha["question"] + "</b>"
     }
