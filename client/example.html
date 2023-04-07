@@ -1,0 +1,21 @@
+<!doctype html>
+<html>
+  <head>
+    <link rel="stylesheet" href="captcha.css"/>
+    <script src="captcha.js"></script>
+  </head>
+  <body>
+    <div onclick="openCaptcha()" id="captcha-open-button">
+      Prove that you aren't robot
+    </div>
+    <div id="captcha">
+      <div id="captcha-image">
+        <img alt='' id="captcha-img"/>
+        <div id="captcha-panels"></div>
+      </div>
+      <div id="captcha-question"></div>
+      <div id="captcha-result"></div>
+      <div id="captcha-submit" onclick="submitCaptcha()">WYŚLIJ</div>
+    </div>
+  </body>
+<html/>
