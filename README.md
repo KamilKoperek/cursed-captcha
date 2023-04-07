@@ -1,4 +1,6 @@
 # cursed-captcha
+**If you scared of AI, this project is for you!**
+
 It's version of captcha made from compilation of weird images found on the internet. Uses only PHP sessions for handling id of given captcha. Maybe it is unsafe, but I did'n bypassed it yet.
 ![preview](https://koperek.top/captcha/captcha.png)
 I don't know why I did it.
@@ -87,3 +89,7 @@ Add square, png-format image to `captchas/images`. Name it as number next at hig
 * minimum - is minimum of squares that must be selected correctly for pass the test. 16 means that all must be correct, 15 - you can make mistake by sellecting one square additional or not selecting one required.
 *files must be named in sequence from 1*
 Last step is set `$numOfCaptchas` variable in server script (`get_captcha.php`, 2nd line) to number of files.
+
+# known problems
+* unlimited new captchas generation rate
+* too few captchas
