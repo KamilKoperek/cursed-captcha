@@ -1,6 +1,6 @@
 # cursed-captcha
 It's version of captcha made from compilation of weird images found on the internet. Uses only PHP sessions for handling id of given captcha. Maybe it is unsafe, but I did'n bypassed it yet.
-
+![preview](https://koperek.top/captcha/captcha.png)
 I don't know why I did it.
 
 ## demo
