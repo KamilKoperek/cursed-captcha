@@ -2,11 +2,11 @@
 **If you scared of AI, this project is for you!**
 
 It's version of captcha made from compilation of weird images found on the internet. Uses only PHP sessions for handling id of given captcha. Maybe it is unsafe, but I did'n bypassed it yet.
-![preview](https://koperek.top/captcha/captcha.png)
+![preview](https://kkoperek.pl/captcha/captcha.png)
 I don't know why I did it.
 
 ## demo
-[Try demo](https://koperek.top/captcha/example.html)
+[Try demo](https://kkoperek.pl/captcha/example.html)
 
 ## how to use
 1. Please don't.
@@ -67,7 +67,7 @@ else
 `$captchaProviderUrl` is our server.
 
 ### how to run server side
-You can use my server (https://koperek.top/captcha/server/get_captcha.php), but I have only few captchas.
+You can use my server (https://kkoperek.pl/captcha/server/get_captcha.php), but I have only few captchas.
 or host it by yourself. Just copy server/get_captcha.php and captchas directory (to same directory). And, Voilà!
 #### get_captcha.php response codes
 |Code|Action|Meaning|
