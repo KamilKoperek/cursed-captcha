@@ -6,7 +6,7 @@ It's version of captcha made from compilation of weird images found on the inter
 I don't know why I did it.
 
 ## demo
-[Try demo]((https://kamilkoperek.pl/captcha/))
+[Try demo](https://kamilkoperek.pl/captcha/)
 
 ## how to use
 1. Please don't.
